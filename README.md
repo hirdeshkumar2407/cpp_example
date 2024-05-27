@@ -18,3 +18,15 @@ Ensure you have the following installed:
 
 
 
+### Docker Build and Run
+```console
+[user@vm cpp_example]$ sudo docker build -t cpp_example:v1 .
+```
+
+```console
+[user@vm cpp_example]$ sudo docker run -d --name f4 cpp_example:v1 
+```
+
+```console
+[user@vm cpp_example]$ sudo docker logs f4
+```

@@ -1,25 +1,27 @@
 FROM gcc:latest
 
 #Install cmake
-RUN 
+RUN  apt-get update && apt-get install -y cmake
 
 #Set the workdir
-WORKDIR 
+WORKDIR /usr/src/cpp_example/
 
 #Copy your files
-COPY 
+COPY src/ src/
+COPY include/ include/
+COPY CMakeLists.txt .
 
 #Create the build folder
-RUN 
+RUN mkdir build
 
 #Change workdir
-WORKDIR 
+WORKDIR /usr/src/cpp_example/build
 
 #Cmake
-RUN 
+RUN  cmake ..
 
 #Cmake part2
-RUN 
+RUN cmake --build .
 
 #Execute 
-CMD 
+CMD  ["./CMakeHelloWorld"]
